@@ -1,0 +1,172 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: url(images/2023_01_07_02_56_17.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.container h2 {
+    position: absolute;
+    top: 50px;
+    padding: 10px 10px;
+    text-transform: capitalize;
+    font-size: 50px;
+    font-weight: bold;
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    border: 10px solid black;
+    border-width: 5px;
+}
+
+.highway {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    animation: highway 15s linear infinite;
+    height: 200px;
+    width: 5000%;
+    background-repeat: repeat-x;
+    display: block;
+    background: url(images/road.jpg);
+}
+
+@keyframes highway {
+   0% {
+    transform: translateX(0px);
+}
+    50% {
+        transform: translateX(-30140px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+.city {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 200px;
+    display: block;
+    z-index: 1;
+    height: 250px;
+    width: 500%;
+    
+    background-repeat: repeat-x;
+    animation: city 20s linear infinite;
+    
+}
+
+@keyframes city {
+    100% {
+        transform: translateX(-1400px);
+    }
+}
+
+.car {
+    width: 400px;
+    left: 50%;
+    bottom: 100px;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 2;
+    animation: rotate 15s linear infinite;
+    
+}
+@keyframes rotate {
+    0%{
+        transform: scale(1);
+    }
+    49%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(-1,1);
+    }
+    99%{
+        transform: scale(-1,1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.car img {
+    width: 100%;
+    animation: driving 1s linear infinite;
+}
+
+@keyframes driving {
+    100% {
+        transform: translateY(-1px);
+    }
+
+    50% {
+        transform: translateY(1px);
+    }
+
+    0% {
+        transform: translateY(-1px);
+    }
+}
+
+.wheels {
+    left: 50%;
+    bottom: 178px;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 2;
+}
+
+.wheels img {
+    width: 72px;
+    height: 72px;
+    animation: rotationWheel 1s linear infinite;
+}
+
+.back-wheel {
+    position: absolute;
+    left: -165px;
+}
+
+.front-wheel {
+    position: absolute;
+    left: 80px;
+}
+
+@keyframes rotationWheel {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 800px) {
+    .highway {
+        animation: highway 7s linear infinite;
+        width: 1500%;
+    }
+
+    .container h2 {
+        top: 25px;
+        font-size: 35px;
+        width: 90%;
+        white-space: normal;
+    }
+}
